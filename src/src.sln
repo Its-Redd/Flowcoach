@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowCoach.Entities", "FlowC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowCoach.DataAccess", "FlowCoach.DataAccess\FlowCoach.DataAccess.csproj", "{0D0E3CC7-D0B6-446E-B4FF-4405B6550259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowCoach.App", "FlowCoach.App\FlowCoach.App.csproj", "{4CC8FEAF-B987-442E-9C43-07C4FF507513}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0D0E3CC7-D0B6-446E-B4FF-4405B6550259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D0E3CC7-D0B6-446E-B4FF-4405B6550259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D0E3CC7-D0B6-446E-B4FF-4405B6550259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC8FEAF-B987-442E-9C43-07C4FF507513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC8FEAF-B987-442E-9C43-07C4FF507513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC8FEAF-B987-442E-9C43-07C4FF507513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC8FEAF-B987-442E-9C43-07C4FF507513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
