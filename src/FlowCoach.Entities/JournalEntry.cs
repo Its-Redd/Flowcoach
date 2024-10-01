@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FlowCoach.Entities
+﻿namespace FlowCoach.Entities
 {
-    internal class JournalEntry
+    public class JournalEntry
     {
+        private int id;
+        private Question question;
+        private string answer;
+        private DateOnly date;
+
+        public int Id { get => id; set => id = value; }
+        public Question Question { get => question; set => question = value; }
+        public string Answer { get => answer; set => answer = value; }
+        public DateOnly Date { get => date; set => date = value; }
+
+        public JournalEntry(int id, Question question, string answer, DateOnly date)
+        {
+            Id = id;
+            Question = question;
+            Answer = answer;
+            Date = date;
+        }
     }
 }

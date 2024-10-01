@@ -12,9 +12,9 @@
 
         public Card(int id, string image, string title)
         {
-            this.id = id;
-            this.image = image;
-            this.title = title;
+            Id = id;
+            Image = image;
+            Title = title;
         }
     }
 }
