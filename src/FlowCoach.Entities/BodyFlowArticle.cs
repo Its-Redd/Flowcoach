@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FlowCoach.Entities
+﻿namespace FlowCoach.Entities
 {
-    internal class BodyFlowArticle
+    public class BodyFlowArticle
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public List<string> Content { get; set; }
+        public List<string> Images { get; set; }
+
+        public BodyFlowArticle(int id, string title, List<string> content, List<string> images)
+        {
+            Id = id;
+            Title = title;
+            Content = content;
+            Images = images;
+        }
+
     }
 }
