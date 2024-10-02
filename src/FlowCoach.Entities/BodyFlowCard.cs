@@ -10,5 +10,9 @@
         {
             BodyflowArticleId = bodyflowArticleId;
         }
+
+        public BodyFlowCard() : base(0, "", "")
+        {
+        }
     }
 }

@@ -22,5 +22,9 @@
             Password = password;
             JournalEntries = journalEntries;
         }
+
+        public User()
+        {
+        }
     }
 }

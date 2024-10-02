@@ -19,5 +19,9 @@
             Content = content;
             Images = images;
         }
+
+        public BodyFlowArticle()
+        {
+        }
     }
 }

@@ -1,10 +1,16 @@
 using FlowCoach.App.Components;
+using FlowCoach.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddDbContext<DataContext>(options =>
+       options.UseSqlServer(builder.Configuration.GetConnectionString("CONNECTION_STRING")));
 
 var app = builder.Build();
 

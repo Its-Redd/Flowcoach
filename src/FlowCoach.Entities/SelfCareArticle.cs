@@ -19,5 +19,9 @@
             SoundFile = soundFile;
             Question = question;
         }
+
+        public SelfCareArticle()
+        {
+        }
     }
 }

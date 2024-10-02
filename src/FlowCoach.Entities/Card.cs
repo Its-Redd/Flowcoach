@@ -16,5 +16,9 @@
             Image = image;
             Title = title;
         }
+
+        public Card()
+        {
+        }
     }
 }

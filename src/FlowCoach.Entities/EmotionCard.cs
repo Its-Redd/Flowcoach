@@ -8,5 +8,9 @@
         {
             CoachId = coachId;
         }
+
+        public EmotionCard() : base(0, "", "")
+        {
+        }
     }
 }

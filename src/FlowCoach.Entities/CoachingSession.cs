@@ -19,5 +19,9 @@
             Content = content;
             Questions = questions;
         }
+
+        public CoachingSession()
+        {
+        }
     }
 }

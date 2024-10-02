@@ -10,5 +10,9 @@
         {
             SelfcareArticleId = selfcareArticleId;
         }
+
+        public SelfcareCard() : base(0, "", "")
+        {
+        }
     }
 }

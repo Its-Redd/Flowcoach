@@ -19,5 +19,9 @@
             Answer = answer;
             Date = date;
         }
+
+        public JournalEntry()
+        {
+        }
     }
 }

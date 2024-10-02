@@ -13,5 +13,9 @@
             Description = description;
             Path = path;
         }
+
+        public FlowcoachCard() : base(0, "", "")
+        {
+        }
     }
 }
