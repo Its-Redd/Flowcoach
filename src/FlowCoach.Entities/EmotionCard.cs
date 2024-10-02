@@ -2,11 +2,13 @@
 {
     public class EmotionCard : Card
     {
-        private int coachId;
-        public int CoachId { get => coachId; set => coachId = value; }
-        public EmotionCard(int id, string image, string title, int coachId) : base(id, image, title)
+        private CoachingSession coachingSession;
+
+        public CoachingSession CoachingSession { get => coachingSession; set => coachingSession = value; }
+
+        public EmotionCard(int id, string image, string title, CoachingSession coachingSession) : base(id, image, title)
         {
-            CoachId = coachId;
+            CoachingSession = coachingSession;
         }
 
         public EmotionCard() : base(0, "", "")

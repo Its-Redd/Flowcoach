@@ -2,13 +2,13 @@
 {
     public class SelfcareCard : Card
     {
-        private int selfcareArticleId;
+        private SelfCareArticle selfCareArticle;
 
-        public int SelfcareArticleId { get => selfcareArticleId; set => selfcareArticleId = value; }
+        public SelfCareArticle SelfCareArticle { get => selfCareArticle; set => selfCareArticle = value; }
 
-        public SelfcareCard(int id, string image, string title, int selfcareArticleId) : base(id, image, title)
+        public SelfcareCard(int id, string image, string title, SelfCareArticle selfCareArticle) : base(id, image, title)
         {
-            SelfcareArticleId = selfcareArticleId;
+            SelfCareArticle = selfCareArticle;
         }
 
         public SelfcareCard() : base(0, "", "")

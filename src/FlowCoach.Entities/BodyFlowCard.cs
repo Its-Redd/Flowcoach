@@ -2,13 +2,13 @@
 {
     public class BodyFlowCard : Card
     {
-        private int bodyflowArticleId;
+        private BodyFlowArticle bodyFlowArticle;
 
-        public int BodyflowArticleId { get => bodyflowArticleId; set => bodyflowArticleId = value; }
+        public BodyFlowArticle BodyFlowArticle { get => bodyFlowArticle; set => bodyFlowArticle = value; }
 
-        public BodyFlowCard(int id, string image, string title, int bodyflowArticleId) : base(id, image, title)
+        public BodyFlowCard(int id, string image, string title, BodyFlowArticle bodyFlowArticle) : base(id, image, title)
         {
-            BodyflowArticleId = bodyflowArticleId;
+            BodyFlowArticle = bodyFlowArticle;
         }
 
         public BodyFlowCard() : base(0, "", "")
