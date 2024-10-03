@@ -11,9 +11,11 @@
 
 @code {
     private int currentCount = 0;
+    private int incrementAmount = 1;
 
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount += incrementAmount;
+        incrementAmount++;
     }
 }
