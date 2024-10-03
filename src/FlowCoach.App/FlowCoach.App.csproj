@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlowCoach.DataAccess\FlowCoach.DataAccess.csproj" />
     <ProjectReference Include="..\FlowCoach.Entities\FlowCoach.Entities.csproj" />
+    <ProjectReference Include="..\Flowcoach.Services\Flowcoach.Services.csproj" />
   </ItemGroup>
 
 </Project>
