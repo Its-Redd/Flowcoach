@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowcoach.API", "Flowcoach.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowcoach.Hubs", "Flowcoach.Hubs\Flowcoach.Hubs.csproj", "{5E76F382-5EE3-4689-8440-AF24A0D771F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Flowcoach.Assets", "Flowcoach.Assets", "{7FE18810-0627-4163-AD0E-D8BAD5E65A6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
