@@ -1,0 +1,6 @@
+@Flowcoach.Hubs_HostAddress = http://localhost:5052
+
+GET {{Flowcoach.Hubs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

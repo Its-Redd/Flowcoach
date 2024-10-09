@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Flowcoach.API.Controllers
+namespace Flowcoach.Hubs.Controllers
 {
     [ApiController]
     [Route("[controller]")]
