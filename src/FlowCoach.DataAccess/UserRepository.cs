@@ -2,45 +2,19 @@
 
 namespace FlowCoach.DataAccess
 {
-    public class UserRepository : IUserRepository, IRepository<User>
+    public class UserRepository : Repository<User>, IUserRepository
     {
         public UserRepository(DataContext dataContext) : base(dataContext)
         {
         }
-        public void Add(User entity)
+
+        public bool Login(string email, string password)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(User entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<User> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public User GetBy(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(string username, string password)
-        {
-
-
-        }
-
-        public void Update(User entity)
-        {
-            throw new NotImplementedException();
+            if (dataContext.Users.Any(u => u.Email == email && u.Password == password))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
