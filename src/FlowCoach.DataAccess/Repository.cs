@@ -8,34 +8,39 @@
         {
             this.dataContext = dataContext;
         }
+
+
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            dataContext.Add(entity);
+            dataContext.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            dataContext.Remove(entity);
+            dataContext.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            dataContext.Remove(id);
+            dataContext.SaveChanges();
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return dataContext.Set<T>().ToList();
         }
 
         public T GetBy(int id)
         {
-            throw new NotImplementedException();
+            return dataContext.Set<T>().Find(id);
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            dataContext.Update(entity);
         }
     }
 }
