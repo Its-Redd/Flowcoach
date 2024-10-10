@@ -1,19 +1,18 @@
-﻿namespace FlowCoach.DataAccess
-{
-    public class Repository<T> : IRepository<T> where T : class
-    {
-        protected readonly DataContext dataContext;
+﻿using FlowCoach.Entities;
 
-        public Repository(DataContext dataContext)
+namespace FlowCoach.DataAccess
+{
+    public class UserRepository : IUserRepository, IRepository<User>
+    {
+        public UserRepository(DataContext dataContext) : base(dataContext)
         {
-            this.dataContext = dataContext;
         }
-        public void Add(T entity)
+        public void Add(User entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(T entity)
+        public void Delete(User entity)
         {
             throw new NotImplementedException();
         }
@@ -23,17 +22,23 @@
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<User> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public T GetBy(int id)
+        public User GetBy(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(T entity)
+        public bool Login(string username, string password)
+        {
+
+
+        }
+
+        public void Update(User entity)
         {
             throw new NotImplementedException();
         }
