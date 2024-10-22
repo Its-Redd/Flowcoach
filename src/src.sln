@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowcoach.Hubs", "Flowcoach
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Flowcoach.Assets", "Flowcoach.Assets", "{7FE18810-0627-4163-AD0E-D8BAD5E65A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowcoach.Components", "Flowcoach.Components\Flowcoach.Components.csproj", "{959C9D38-72F3-44D6-8887-02DECBE8C0A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowcoach.Components", "Flowcoach.Components\Flowcoach.Components.csproj", "{E7D24EC4-517B-437A-859F-69303BCE74D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +49,10 @@ Global
 		{5E76F382-5EE3-4689-8440-AF24A0D771F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E76F382-5EE3-4689-8440-AF24A0D771F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E76F382-5EE3-4689-8440-AF24A0D771F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{959C9D38-72F3-44D6-8887-02DECBE8C0A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{959C9D38-72F3-44D6-8887-02DECBE8C0A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{959C9D38-72F3-44D6-8887-02DECBE8C0A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{959C9D38-72F3-44D6-8887-02DECBE8C0A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D24EC4-517B-437A-859F-69303BCE74D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D24EC4-517B-437A-859F-69303BCE74D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D24EC4-517B-437A-859F-69303BCE74D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D24EC4-517B-437A-859F-69303BCE74D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
