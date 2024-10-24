@@ -1,28 +1,32 @@
-﻿<nav class="">
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="/">
-            <i class="fa-solid fa-dharmachakra"></i>
-            MYFLOW
-            </a>
-            </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/counter">
-            
-            FLOWCOACH
-            </a>
-            </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/fetchdata">
-            
-            BODYFLOW
-            </a>
-            </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/counter">
-            
-            FLOWJOURNAL
-            </a>
-            </li>
-    </ul>
-</nav>
+﻿@* BottomNavBar.razor *@
+<div class="bottom-nav bg-light fixed-bottom">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col">
+                <a href="#myflow" class="nav-link nav-element">
+                    <i class="fa-solid fa-user"></i>
+                    <p>MYFLOW</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#flowcoach" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <p>FLOWCOACH</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#bodyflow" class="nav-link">
+                    <i class="fa-solid fa-dharmachakra"></i>
+                    <p>BODYFLOW</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#flowjournal" class="nav-link">
+                    <i class="fa-solid fa-book"></i>
+                    <p>FLOWJOURNAL</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
