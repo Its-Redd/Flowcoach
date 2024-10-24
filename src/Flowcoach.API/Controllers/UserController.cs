@@ -13,44 +13,86 @@ namespace Flowcoach.API.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] User user)
         {
-            if (repository.Login(user.Email, user.Password))
+            try
             {
-                return Ok();
+                if (repository.Login(user.Email, user.Password))
+                {
+                    return Ok();
+                }
+                return Unauthorized();
             }
-            return Unauthorized();
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPost("register")]
         public IActionResult Register([FromBody] User user)
         {
-            repository.Add(user);
-            return Ok();
+            try
+            {
+                repository.Add(user);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(repository.GetAll());
+            try
+            {
+                return Ok(repository.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult Get(int id)
         {
-            return Ok(repository.GetBy(id));
+            try
+            {
+                return Ok(repository.GetBy(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult Put([FromBody] User user)
         {
-            repository.Update(user);
-            return Ok();
+            try
+            {
+                repository.Update(user);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            repository.Delete(id);
-            return Ok();
+            try
+            {
+                repository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

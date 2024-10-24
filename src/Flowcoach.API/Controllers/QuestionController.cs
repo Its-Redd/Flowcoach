@@ -11,56 +11,109 @@ namespace Flowcoach.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(questionRepository.GetAll());
+            try
+            {
+                return Ok(questionRepository.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
+
         [HttpGet]
         public IActionResult Get(int id)
         {
-            return Ok(questionRepository.GetBy(id));
-
+            try
+            {
+                return Ok(questionRepository.GetBy(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] Question question)
         {
-            questionRepository.Add(question);
-            return Ok();
+            try
+            {
+                questionRepository.Add(question);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult Put([FromBody] Question question)
         {
-            questionRepository.Update(question);
-            return Ok();
+            try
+            {
+                questionRepository.Update(question);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            questionRepository.Delete(id);
-            return Ok();
+            try
+            {
+                questionRepository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult GetByCategory(QuestionCategory questionCategory)
         {
-            return Ok(questionRepository.GetAllQuestionsWith(questionCategory));
+            try
+            {
+                return Ok(questionRepository.GetAllQuestionsWith(questionCategory));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult GetFirst5QuestionsWith(QuestionCategory questionCategory)
         {
-            return Ok(questionRepository.GetFirst5QuestionsWith(questionCategory));
+            try
+            {
+                return Ok(questionRepository.GetFirst5QuestionsWith(questionCategory));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult GetNext5QuestionsWith(int lastQuestionId, QuestionCategory questionCategory)
         {
-            return Ok(questionRepository.GetNext5QuestionsWith(lastQuestionId, questionCategory));
+            try
+            {
+                return Ok(questionRepository.GetNext5QuestionsWith(lastQuestionId, questionCategory));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
-
-
-
     }
 }
 

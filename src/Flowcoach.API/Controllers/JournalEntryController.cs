@@ -11,33 +11,69 @@ namespace Flowcoach.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(repository.GetAll());
+            try
+            {
+                return Ok(repository.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
+
         [HttpGet]
         public IActionResult Get(int id)
         {
-            return Ok(repository.GetBy(id));
+            try
+            {
+                return Ok(repository.GetBy(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] JournalEntry journalEntry)
         {
-            repository.Add(journalEntry);
-            return Ok();
+            try
+            {
+                repository.Add(journalEntry);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult Put([FromBody] JournalEntry journalEntry)
         {
-            repository.Update(journalEntry);
-            return Ok();
+            try
+            {
+                repository.Update(journalEntry);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            repository.Delete(id);
-            return Ok();
+            try
+            {
+                repository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }
