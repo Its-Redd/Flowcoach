@@ -20,4 +20,12 @@
     <ProjectReference Include="..\Flowcoach.Services\Flowcoach.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\FC1.webp" />
+  </ItemGroup>
+
 </Project>
