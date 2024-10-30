@@ -1,17 +1,26 @@
-﻿
-<div class="header">
-    <button @onclick="GoBack" class="back-button">
-        <i class="fa-solid fa-arrow-left"></i>
+﻿@inject NavigationManager NavigationManager
+
+<header class="header">
+ @if (redirectPath != null)
+    {
+            <button @onclick="GoBack" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
         </button>
-    <h1 class="header-title">noget endnu længere</h1>
-</div>
+    }
+    <h1 class="header-title">@Title</h1>
+</header>
 
 @code {
+    [Parameter]
+    public string Title { get; set; } = default;
+
+    [Parameter]
+    public string?  redirectPath { get; set; } = null;
+
     private void GoBack()
-
     {
-
-
+        NavigationManager.NavigateTo(redirectPath);
     }
+
 }
 

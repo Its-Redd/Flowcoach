@@ -1,32 +1,42 @@
 ﻿@* BottomNavBar.razor *@
+@inject NavigationManager NavigationManager
+
 <div class="bottom-nav fixed-bottom">
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col">
-                <a href="#myflow" class="nav-link nav-element">
-                    <i class="fa-solid fa-user"></i>
-                    <p>MYFLOW</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="/home" class="nav-link nav-element">
-                    <i class="fa-solid fa-grid-2"></i>
-                    <p>FLOWCOACH</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#bodyflow" class="nav-link nav-element">
-                    <i class="fa-solid fa-dharmachakra"></i>
-                    <p>BODYFLOW</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#flowjournal" class="nav-link nav-element">
-                    <i class="fa-solid fa-book"></i>
-                    <p>FLOWJOURNAL</p>
-                </a>
-            </div>
+            @foreach (var link in links)
+            {
+                <div class="col">
+                    <a @onclick="() => NavigateTo(link.Uri)" class="nav-link nav-element">
+                        <i class="@link.icon"></i>
+                        <p>@link.Text</p>
+                    </a>
+                </div>
+            }
         </div>
     </div>
 </div>
+
+@code
+{
+    private List<Link> links = new List<Link>
+    {
+        new Link { Uri = "/myflow" , Text = "MyFlow", icon = "fa-solid fa-user" },
+        new Link { Uri = "/home" , Text = "FlowCoach", icon = "fa-solid fa-grid-2" },
+        new Link { Uri = "/bodyflow" , Text = "BodyFlow", icon = "fa-solid fa-dharmachakra" },
+        new Link { Uri = "/flowjournal" , Text = "FlowJournal", icon = "fa-solid fa-book" },
+    };
+    
+
+    public void NavigateTo(string uri)
+    {
+        NavigationManager.NavigateTo(uri);
+    }
+
+    private class Link     {
+        public string Uri { get; set; }
+        public string Text { get; set; }
+        public string icon { get; set; }
+    }
+}
 

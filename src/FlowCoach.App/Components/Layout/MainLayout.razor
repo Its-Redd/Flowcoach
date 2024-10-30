@@ -1,15 +1,14 @@
 ﻿@inherits LayoutComponentBase
-<header>
-    <Flowcoach.Components.Header/>
-</header>
+@inject NavigationManager NavigationManager
 
-<div class="page">
+<Flowcoach.Components.Header Title="@HeaderTitle" />
+
+<div class="page mb-3">
     @Body
-    
 </div>
 
 <footer class="bg-primary">
-    <Flowcoach.Components.NavMenu/>
+    <Flowcoach.Components.NavMenu />
 </footer>
 
 <div id="blazor-error-ui">
@@ -17,3 +16,37 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+@code {
+    private string HeaderTitle = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        UpdateHeaderTitle();
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        UpdateHeaderTitle();
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void UpdateHeaderTitle()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+
+        if (uri.AbsolutePath == "/")
+        {
+            HeaderTitle = "FLOWCOACH";
+            return;
+        }
+
+        HeaderTitle = uri.AbsolutePath.Trim('/').ToUpper();
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}

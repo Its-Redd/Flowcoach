@@ -1,9 +1,10 @@
-﻿.header {
+﻿header {
     display: flex;
     align-items: center;
     padding: 10px;
     background-color: var(--bs-brand);
     color: white;
+    position: relative;
 }
 
 .back-button {
@@ -12,14 +13,17 @@
     border: none;
     color: white;
     cursor: pointer;
+    position: absolute;
+    left: 10px;
 }
 
-.header-title {
-    width: 80%;
+header h1 {
+    width: 100vw;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     margin: 0;
+    position: absolute;
 }
 
 .content {
