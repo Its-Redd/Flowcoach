@@ -1,19 +1,21 @@
 ﻿@inject NavigationManager NavigationManager
 
-<div class="container w-85 mb-5 d-flex flex-column flex-md-row">
-    <a @onclick="Redirect" class="text-decoration-none col-md-6 my-3 mb-md-0 text-white p-3 border-0 rounded-3 bg-dark position-relative d-flex flex-column justify-content-center">
-        <img src="/images/FC1.jpg" alt="Alternate Text" class="img-fluid mb-2" />
-        <h2>Forandring</h2>
-        <p>Kom væk fra den negative følelse</p>
-        <span class="stretched-link"></span>
-    </a>
-    <a href="#selvomsorg" class="text-decoration-none col-md-6 text-white p-3 border-0 rounded-3 bg-dark position-relative d-flex flex-column justify-content-center">
-        <img src="/images/FC2.jpg" alt="Alternate Text" class="img-fluid mb-2" />
-        <h2>Selvomsorg</h2>
-        <p>Det sikre sted, øvelse m.m.</p>
-        <span class="stretched-link"></span>
-    </a>
+<div class="container w-85 mb-5 grid-container">
+    @foreach (var modeCard in modeCards)
+    {
+        <a @onclick="Redirect" class="grid-item text-decoration-none text-white p-3 border-0 rounded-3 bg-dark position-relative d-flex flex-column justify-content-center">
+            <img src="@modeCard.Image" alt="Alternate Text" class="img-fluid mb-2" />
+            <h2>
+                @modeCard.Title
+            </h2>
+            <p>
+                @modeCard.Description
+            </p>
+            <span class="stretched-link"></span>
+        </a>
+    }
 </div>
+
 
 
 
@@ -21,9 +23,32 @@
     [Parameter]
     public string redirectPath { get; set; } = default;
 
+    private IList<ModeCard> modeCards = new List<ModeCard>
+    {
+        new ModeCard
+        {
+            Image = "/images/FC1.jpg",
+            Title = "Forandring",
+            Description = "Kom væk fra den negative følelse"
+        },
+        new ModeCard
+        {
+            Image = "/images/FC2.jpg",
+            Title = "Selvomsorg",
+            Description = "Det sikre sted, øvelse m.m."
+        }
+    };
+
     private void Redirect()
     {
         NavigationManager.NavigateTo(redirectPath);
+    }
+
+    private class ModeCard
+    {
+        public string Image { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
     }
 
 }

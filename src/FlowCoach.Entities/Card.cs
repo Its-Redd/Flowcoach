@@ -6,9 +6,53 @@
         private string image;
         private string title;
 
-        public int Id { get => id; set => id = value; }
-        public string Image { get => image; set => image = value; }
-        public string Title { get => title; set => title = value; }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Id must be a positive integer.");
+                }
+                id = value;
+
+            }
+        }
+
+        public string Image
+        {
+            get
+            {
+                return image;
+            }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Image cannot be null or empty.");
+                }
+                image = value;
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Title cannot be null or empty.");
+                }
+            }
+        }
 
         public Card(int id, string image, string title)
         {
