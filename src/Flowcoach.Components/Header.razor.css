@@ -1,7 +1,6 @@
 ﻿header {
     display: flex;
     align-items: center;
-    padding: 10px;
     background-color: var(--bs-brand);
     color: white;
     position: relative;
@@ -24,6 +23,7 @@ header h1 {
     font-weight: bold;
     margin: 0;
     position: absolute;
+    left: 0;
 }
 
 .content {
