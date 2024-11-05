@@ -7,8 +7,8 @@
         <div class="row text-center">
             @foreach (var link in links)
             {
-                <div @onclick="() => Navigate(link.Uri)" class="col">
-                  <!--Why wont the onclick work?!-->  <a  class="nav-link nav-element">
+                <div class="col">
+                    <!--Why wont the onclick work?!-->    <a @onclick="@(e => NavigationManager.NavigateTo(link.Uri))" class="nav-link nav-element">
                         <i class="@link.icon"></i>
                         <p>@link.Text</p>
                     </a>
