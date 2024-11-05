@@ -1,4 +1,5 @@
 ﻿@* BottomNavBar.razor *@
+
 @inject NavigationManager NavigationManager
 
 <div class="bottom-nav fixed-bottom container-fluid pt-2">
@@ -6,8 +7,8 @@
         <div class="row text-center">
             @foreach (var link in links)
             {
-                <div class="col">
-                    <a @onclick="() => NavigateTo(link.Uri)" class="nav-link nav-element">
+                <div @onclick="await => NavigateTo(link.Uri)" class="col">
+                  <!--Why wont the onclick work?!-->  <a  class="nav-link nav-element">
                         <i class="@link.icon"></i>
                         <p>@link.Text</p>
                     </a>
@@ -17,20 +18,24 @@
     </div>
 </div>
 
+
+
+
 @code
 {
-    private List<Link> links = new List<Link>
+    private static readonly IList<Link> links = new List<Link>
     {
-        new Link { Uri = "/myflow" , Text = "MyFlow", icon = "fa-solid fa-user" },
+        new Link { Uri = "#myflow" , Text = "MyFlow", icon = "fa-solid fa-user" },
         new Link { Uri = "/home" , Text = "FlowCoach", icon = "fa-solid fa-grid-2" },
         new Link { Uri = "/bodyflow" , Text = "BodyFlow", icon = "fa-solid fa-dharmachakra" },
         new Link { Uri = "/flowjournal" , Text = "FlowJournal", icon = "fa-solid fa-book" },
-    };
-    
 
-    public void NavigateTo(string uri)
+    };
+
+    public async Task NavigateTo(string uri)
     {
-        NavigationManager.NavigateTo(uri);
+        Console.WriteLine("Navigating to " + uri);
+        NavigationManager.NavigateTo(uri, true);
     }
 
     private class Link     {
@@ -39,4 +44,4 @@
         public string icon { get; set; }
     }
 }
-
+sssss
