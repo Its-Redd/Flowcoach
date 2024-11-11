@@ -1,6 +1,13 @@
-﻿namespace Flowcoach.Hubs
+﻿using Microsoft.AspNetCore.SignalR;
+
+namespace Flowcoach.Hubs
 {
-    public class FlowcoachHub
+    public class FlowcoachHub : Hub
     {
+        public FlowcoachHub() { }
+
+
+
+
     }
 }
