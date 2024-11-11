@@ -1,4 +1,5 @@
 using FlowCoach.App.Components;
+using FlowCoach.App.wwwroot.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton(new SignalRService("https://localhost:7036/flowcoachhub"));
 
 
 var app = builder.Build();
@@ -22,6 +25,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

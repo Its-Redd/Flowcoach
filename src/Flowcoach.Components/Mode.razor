@@ -19,26 +19,9 @@
 
 
 @code {
-    [Parameter]
-    public string redirectPath { get; set; } = default;
 
-    private IList<ModeCard> modeCards = new List<ModeCard>
-    {
-        new ModeCard
-        {
-            Image = "/images/FC1.jpg",
-            Title = "Forandring",
-            Description = "Kom væk fra den negative følelse",
-            RedirectPath = "/forandring"
-        },
-        new ModeCard
-        {
-            Image = "/images/FC2.jpg",
-            Title = "Selvomsorg",
-            Description = "Det sikre sted, øvelse m.m.",
-            RedirectPath = "/selvomsorg"
-        }
-    };
+
+
 
     public void NavigateTo(string uri)
     {
